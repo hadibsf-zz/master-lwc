@@ -10,6 +10,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>MASTER LWC 1</label>
     <navType>Standard</navType>
+    <tabs>App_Page_One</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>MASTER_LWC_1_UtilityBar</utilityBar>
 </CustomApplication>
