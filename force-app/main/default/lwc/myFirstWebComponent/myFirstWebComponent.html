@@ -1,3 +1,31 @@
 <template>
+    <lightning-card title="ContactInformation" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+           
+           
+
+            <template if:true={contacts}>
+
+                <template for:each={contacts} for:item="contact">
+                    <div class="iteration" key={contact.Id} >
+                       {contact.Name}, {contact.Title}
+                    </div>
+                 </template>
     
+               </template>
+           <template if:false={contacts}>
+
+            the array is undefined
+
+           </template>
+
+
+
+
+
+
+
+
+        </div>
+     </lightning-card>
 </template>
