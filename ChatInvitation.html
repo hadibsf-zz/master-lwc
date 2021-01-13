@@ -10,7 +10,12 @@
 
 <body>
   Hi
-  
+  	<button onclick="document.getElementById("esw-cta_3mi26000000000k").remove();">Remove Button 1</button>
+	<button onclick="document.getElementById("esw-cta_3mi26000000000l").remove();">Remove Button 2</button>
+	<button onclick="document.getElementById("esw-cta_3mi26000000000m").remove();">Remove Button 3</button>
+	<button onclick="document.getElementById("esw-cta_3mi26000000000n").remove();">Remove Button 4</button>
+	
+	
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
@@ -38,12 +43,6 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-	
-	
-	setTimeout(function(){ console.log("removing ..");
-			      document.getElementById("esw-cta_3mi26000000000k").remove();
-			     document.getElementById("esw-cta_3mi26000000000l").remove();
-			     document.getElementById("esw-cta_3mi26000000000m").remove();}, 10000);
 	
 </script>
 </body>
