@@ -10,9 +10,8 @@
 
 <body>
   Hi
-  	<button onclick="getElementById("esw-cta_3mi26000000000l").remove()">Remove Button 1</button>
-	<button onclick="removeChatButton("esw-cta_3mi26000000000l")">Remove Button 2</button>
-	<button onclick="removeChatButton("esw-cta_3mi26000000000m")">Remove Button 3</button>
+
+	
 	<button onclick="myfunction()">Remove Button 4</button>
 	
 	
@@ -44,15 +43,12 @@
 		initESW('https://service.force.com');
 	}
 	
-	function removeChatButton(id){
-		var button = document.getElementById(id);
-		if(button != null) button.remove();
-	}
 	
 	function myfunction(){
 		document.getElementById("esw-cta_3mi26000000000k").remove();
 		document.getElementById("esw-cta_3mi26000000000l").remove();
 		document.getElementById("esw-cta_3mi26000000000m").remove();
+		console.log("done");
 	}
 </script>
 </body>
