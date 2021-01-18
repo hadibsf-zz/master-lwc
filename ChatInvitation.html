@@ -46,10 +46,10 @@
 	
 	
 	function myfunction(){
-		embedded_svc.menu.hideButtonAndMenu();
-		document.getElementById("esw-cta_3mi26000000000k").remove();
-		document.getElementById("esw-cta_3mi26000000000l").remove();
-		document.getElementById("esw-cta_3mi26000000000m").remove();
+		embedded_svc.menu.reorder(["Motor_Service","Generic_Service","Motor_Sales"]);
+		//document.getElementById("esw-cta_3mi26000000000k").remove();
+		//document.getElementById("esw-cta_3mi26000000000l").remove();
+		//document.getElementById("esw-cta_3mi26000000000m").remove();
 		console.log("done");
 	}
 </script>
