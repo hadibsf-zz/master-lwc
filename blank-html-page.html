@@ -98,12 +98,12 @@
 			
 			return (document.getElementById("buttonId").value);
 		};
-		embedded_svc.settings.prepopulatedPrechatFields = {
+		/*embedded_svc.settings.prepopulatedPrechatFields = {
 		    FirstName: "John",
 		    LastName: "Doe",
 		    Email: "john.doe@salesforce.com",
 		    Subject: "Hello"
-		}; //Sets the auto-population of pre-chat form fields
+		};*/ //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		embedded_svc.settings.externalScripts = ["CustomScript"];
@@ -139,7 +139,8 @@
 		initESW('https://service.force.com');
 	}
 	function handlePageLoad(){
-		aleret('loaded');
+		console.log("page loaded");
+		document.getElementById("chatCustomerLocation__c").style.display = "none";
 	}
 	if (window.addEventListener) {
 		window.addEventListener('load', handlePageLoad, false);
