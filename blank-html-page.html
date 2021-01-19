@@ -110,7 +110,9 @@
 		
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
-
+		embedded_svc.addEventHandler("onIdleTimeoutOccurred", function(data) {
+			console.log("onIdleTimeoutOccurred event was fired. liveAgentSessionKey was " + data.liveAgentSessionKey);
+		});
 		embedded_svc.init(
 			'https://directlinegroupde.my.salesforce.com',
 			'https://isvsi-14ddd2ecd93-17675b6ea86.force.com/Customer',
@@ -138,7 +140,9 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-	function handlePageLoad(){
+	
+	
+	/*function handlePageLoad(){
 		console.log("page loaded");
 		document.getElementById("chatCustomerLocation__c").style.display = "none";
 	}
@@ -146,7 +150,7 @@
 		window.addEventListener('load', handlePageLoad, false);
 	} else {
 		window.attachEvent('onload', handlePageLoad, false);
-	}
+	}*/
 </script>
 	
 </body>
