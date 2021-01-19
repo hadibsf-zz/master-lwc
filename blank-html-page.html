@@ -16,7 +16,7 @@
   
 <div class="container">	
 	Route to button id : <input id="buttonId" name="buttonId" type="text"/>
-	okii
+	d
 	
 	
 </div>
@@ -110,15 +110,15 @@
 		
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
+		
+		// Events 
 		embedded_svc.addEventHandler("onIdleTimeoutWarningStart", function(data) {
 			console.log("onIdleTimeoutWarningStart event was fired. liveAgentSessionKey was " + JSON.stringify(data) );
-			alert('Session has been idle over its time limit. Chat will end in 10 secondes');
 		});
 		
-		
-		embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
-			console.log("onChatRequestSuccess event was fired. liveAgentSessionKey was " +
-		data.liveAgentSessionKey);
+		embedded_svc.addEventHandler("onChatEstablished", function(data) {
+			console.log("onChatEstablished event was fired. liveAgentSessionKey was " + data);
+			
 			embedded_svc.settings.extraPrechatFormDetails = [{  
 			    "label":"PageLocation",
 			    "value":"started in location A",
@@ -126,13 +126,16 @@
 			    "displayToAgent":true
 			}];
 		});
+		embedded_svc.addEventHandler("onChatRequestSuccess", function(data) {
+			console.log("onChatRequestSuccess event was fired. liveAgentSessionKey was " + data);
+		});
 		
 		
 		
 		
 		
 		
-		
+		// Lastly, init
 		embedded_svc.init(
 			'https://directlinegroupde.my.salesforce.com',
 			'https://isvsi-14ddd2ecd93-17675b6ea86.force.com/Customer',
