@@ -110,8 +110,8 @@
 		
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
-		embedded_svc.addEventHandler("onIdleTimeoutOccurred", function(data) {
-			console.log("onIdleTimeoutOccurred event was fired. liveAgentSessionKey was " + data.liveAgentSessionKey);
+		embedded_svc.addEventHandler("onIdleTimeoutWarningStart", function(data) {
+			console.log("onIdleTimeoutWarningStart event was fired. liveAgentSessionKey was " + JSON.stringify(data) );
 		});
 		embedded_svc.init(
 			'https://directlinegroupde.my.salesforce.com',
