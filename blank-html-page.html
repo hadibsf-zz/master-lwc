@@ -15,7 +15,7 @@
 <body>
   
 <div class="container">	
-	Route to button id : <input id="buttonId" name="buttonId" type="text"/>
+	Route to button id : <input id="buttonId" name="buttonId" type="text"/>nn
 	
 	
 	
@@ -137,6 +137,14 @@
 		document.body.appendChild(s);
 	} else {
 		initESW('https://service.force.com');
+	}
+	function handlePageLoad(){
+		aleret('loaded');
+	}
+	if (window.addEventListener) {
+		window.addEventListener('load', handlePageLoad, false);
+	} else {
+		window.attachEvent('onload', handlePageLoad, false);
 	}
 </script>
 	
