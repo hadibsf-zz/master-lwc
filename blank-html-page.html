@@ -16,7 +16,7 @@
   
 <div class="container">	
 	Route to button id : <input id="buttonId" name="buttonId" type="text"/>
-	done
+	everywhere
 	
 	
 </div>
@@ -78,7 +78,19 @@
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
@@ -128,26 +140,22 @@
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
 			console.log("afterMaximize event was fired. liveAgentSessionKey was " + data);
-			embedded_svc.settings.extraPrechatFormDetails = [{  
-			    "label":"PageLocation",
-			    "value":"started in location A",
-			    "transcriptFields":[ "Page_Location__c"],
-			    "displayToAgent":true
-			}];
+			
 			console.log('done1');
 		});
 		
 		embedded_svc.addEventHandler("onQueueUpdate", function(data) {
 			console.log("onQueueUpdate event was fired. liveAgentSessionKey was " + data);
-			embedded_svc.settings.extraPrechatFormDetails = [{  
-			    "label":"PageLocation",
-			    "value":"started in location A",
-			    "transcriptFields":[ "Page_Location__c"],
-			    "displayToAgent":true
-			}];
+			
 			console.log('done2');
 		});
 		
+		embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 		// Lastly, init
 		embedded_svc.init(
 			'https://directlinegroupde.my.salesforce.com',
@@ -164,6 +172,13 @@
 				isOfflineSupportEnabled: false
 			}
 		);
+		
+		embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 	};
 
 	if (!window.embedded_svc) {
@@ -173,8 +188,20 @@
 			initESW(null);
 		};
 		document.body.appendChild(s);
+		embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 	} else {
 		initESW('https://service.force.com');
+		embedded_svc.settings.extraPrechatFormDetails = [{  
+			    "label":"PageLocation",
+			    "value": window.location.href ,
+			    "transcriptFields":[ "Page_Location__c"],
+			    "displayToAgent":true
+			}];
 	}
 	
 	
