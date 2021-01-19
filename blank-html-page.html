@@ -16,7 +16,7 @@
   
 <div class="container">	
 	Route to button id : <input id="buttonId" name="buttonId" type="text"/>
-	okk
+	alert
 	
 	
 </div>
@@ -112,6 +112,7 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		embedded_svc.addEventHandler("onIdleTimeoutWarningStart", function(data) {
 			console.log("onIdleTimeoutWarningStart event was fired. liveAgentSessionKey was " + JSON.stringify(data) );
+			alert('Session has been idle over its time limit. Chat will end in 10 secondes');
 		});
 		embedded_svc.init(
 			'https://directlinegroupde.my.salesforce.com',
