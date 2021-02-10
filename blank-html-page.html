@@ -52,7 +52,7 @@
 <p>Snackbars are often used as a tooltips/popups to show a message at the bottom of the screen.</p>
 <p>Click on the button to show the snackbar. It will disappear after 3 seconds.</p>
 
-<button onclick="myFunction()">Show Snackbar</button>
+<button onclick="myFilterFunction()">Keep the 4th Chat button</button>
 
 <div id="snackbar">Some text some message..</div>
 
@@ -69,12 +69,20 @@ function myFunction() {
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
+
+
+	function myFilterFunction(){
+    	document.getElementById('esw-cta_3mi26000000000k').remove();
+        document.getElementById('esw-cta_3mi26000000000l').remove();
+        document.getElementById('esw-cta_3mi26000000000m').remove();
+    }
+    
+    
 	var initESW = function(gslbBaseURL) {
 		// Required if you want labels in a language that’s different from your user’s context.
 		//embedded_svc.menu.settings.language = ''; //For example, enter 'en' or 'en-US'
-		
-        
-        
+		//embedded_svc.menu.settings.devMode = true;
+
 
 		embedded_svc.menu.init(
 			'https://directlinegroup--r1c1e2e.my.salesforce.com',
@@ -84,9 +92,12 @@ function myFunction() {
 			'AllChats'
 		);
         
-        //embedded_svc.menu.settings.devMode = true;
-        //var newOrder = ["Motor_Service", "Generic_Service", "Motor_Sales"];
-        //embedded_svc.menu.reorder(newOrder);
+        // To Hide the channel menu execute : 
+        //embedded_svc.menu.reorder([""]);
+        
+        //To filter to menu items and keep only Motor_Service button
+        //embedded_svc.menu.reorder(["Motor_Service"]);
+        
 	};
 
 	if (!window.embedded_svc || !window.embedded_svc.menu) {
